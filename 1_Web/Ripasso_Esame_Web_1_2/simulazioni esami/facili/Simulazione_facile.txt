@@ -1,0 +1,100 @@
+1. Block vs Inline :
+
+    risposta:
+    i tag block permettono di andare a capo
+    i tag inline mantengono tutto sulla stessa riga
+---------------------------------------------------------------------------------------------------------------------------------------------
+2. Margin vs Padding :
+    div {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid black;
+    }
+
+    risposta:
+    Margin : spazio interno
+    padding : spazio esterno
+
+    ❌ CONTRARIO : Margin(Esterno) - padding(Interno) 
+---------------------------------------------------------------------------------------------------------------------------------------------
+3. Domanda 3 (JS - Variabili) Cosa succede se esegui questo codice? Perché?
+    const x = 10;
+    x = 20;
+    console.log(x);
+
+    risposta:
+    Risultato = ERRORE
+    perchè CONST non è ridichiarabile
+---------------------------------------------------------------------------------------------------------------------------------------------
+4. Domanda 4 (JS - DOM) Cosa fa esattamente la seguente riga di codice JavaScript?
+    document.getElementById("titolo").innerHTML = "Benvenuto";
+
+    risposta:
+    rappresenta sul browser il titolo id con il testo "Benvenuto"
+---------------------------------------------------------------------------------------------------------------------------------------------
+5. Domanda 5 (React - JSX) In un file React (JSX), perché non possiamo usare l'attributo HTML standard class per assegnare una classe CSS, ma dobbiamo usare className?
+
+    risposta:
+    perche il .jsx è un'estenzione di JavaScript che emula la sintassi HTML con delle differenze
+
+    ✋ Meglio dire : La parola class è una parola riservata in JavaScript (serve per creare le classi), quindi in JSX si usa className per evitare conflitti.
+---------------------------------------------------------------------------------------------------------------------------------------------
+6. (JS - Array) Dato il seguente array:
+    let colori = ["Rosso", "Verde", "Blu"];
+    Cosa viene stampato in console con console.log(colori[1]);? A) Rosso B) Verde C) Blu
+
+    risposta : B) Verde
+---------------------------------------------------------------------------------------------------------------------------------------------
+7. Domanda 7 (React - Props) Definizione breve: Cosa sono le Props in React e in che modo differiscono dallo State (Stato)?
+
+    risposta:
+    le props permettono il trasferimento dei dati da un componente Padre a un componente figlio
+    lo state controlla solo lo stato di una funzione, aggiornando il valore quando esso cambia
+---------------------------------------------------------------------------------------------------------------------------------------------
+8. (JS - Funzioni) Trasforma questa funzione classica in una Arrow Function (funzione freccia):
+    function somma(a, b) {
+        return a + b;
+    }
+
+    risposta:
+    const somma(a, b) => a+b;
+
+    oppure
+    const somma = (a,b) => {
+        return a+b;
+    }
+
+    ❌ manca "=" : const somma = (a, b) => a+b;
+---------------------------------------------------------------------------------------------------------------------------------------------
+9. const [contatore, setContatore] = useState(0);
+    Cosa rappresenta contatore e cosa rappresenta setContatore?
+
+    contatore è lo stato iniziale 
+    setContatore è il cambio di stato
+---------------------------------------------------------------------------------------------------------------------------------------------
+10. In quale sezione del documento HTML (<head> o <body>) devi inserire gli elementi che l'utente deve vedere effettivamente sullo schermo (testi, immagini, bottoni)?
+    
+    risposta:
+    Dentro il <body> Qui dentro </body>
+---------------------------------------------------------------------------------------------------------------------------------------------
+11. Scrivi il codice per stampare in console solo il nome dello studente.
+    const studente = {
+        nome: "Mario",
+        voto: 28
+    };
+
+    risposta:
+    console.log(nome);
+    
+    ❌ sintassi : console.log(studente.nome);
+---------------------------------------------------------------------------------------------------------------------------------------------
+12. Qual è la sintassi corretta per gestire un click su un bottone in React? 
+    A) onclick="miaFunzione()" 
+    B) onClick={miaFunzione} 
+    C) onClick="miaFunzione"
+
+    risposta:
+    B) onClick={miaFunzione}
+
+
+9/12

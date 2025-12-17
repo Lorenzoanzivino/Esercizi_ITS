@@ -1,0 +1,53 @@
+1. DESTRUTTURAZIONE (Destructuring) :
+    * Estrae oggetti o dati dall'array in modo rapido
+    esempio:
+    // oggetti
+    const utente = { nome: "mario", eta: 25 };
+    const { nome, eta } = utente // crea una variabile nome e eta
+
+    // array
+    const numeri = [10, 20, 30];
+    const [a, b, c] = numeri // a=10, b=20, c=30
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+2. SPREED OPERATOR (...) :
+    * espande un array o un'oggetto, usato per copiare o unire array senza modificare l'originale, ne crea uno Nuovo
+    esempio:
+    const vecchioArray1 = [1, 2];
+    const vecchioArray2 = [3, 4];
+    const nuovoArray = [...vecchioArray1, ...vecchioArray2, 5, 6]; // [1, 2, 3, 4, 5, 6]
+
+    per gli oggetti si usano le {}
+    const profiloCompleto = { ...persona, ...lavoro };
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+3. ARROW FUNCTION 
+    const <nome funzione> = () => {};
+    * Funzione scritta in forma compatta con operatore => che semplifica la sintassi, non hanno un proprio this
+    esempio:
+    const somma = (a, b) => {
+        return a + b;
+    }
+
+    * Se il corpo della funzione è su una sola riga, il return è implicito
+    esempio:
+    const somma = (a, b) => a + b;
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+4. ASYNC/AWAIT e PROMISE :
+    * Async/await e Promise permettono di gestire operazioni asincrone in JavaScript in modo più leggibile rispetto ai callback.
+    * async : restituisce sempre una Promise, anche se ritorna un valore normale.
+    * await : permette di attendere il risultato della promise in modo sincrono
+    * Promise : rappresenta il risultato futuro di un’operazione asincrona, che può essere risolta, rifiutata o in attesa.
+    esempio:
+    async function <nome funzione>() {
+        try {
+            const risultato = await operazioneAsincrona();
+            console.log(risultato);
+        } catch (errore) {
+            console.error(errore);
+        }
+    }

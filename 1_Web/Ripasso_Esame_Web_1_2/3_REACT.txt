@@ -1,0 +1,85 @@
+1. COMPONENTI e JSX :
+    * JSX : estenzione javascript che permette di scrivere sintassi come HTML usata in React
+        * le classi CSS si definiscono con className
+        * le variabili e espressioni si inseriscono nelle { }
+        esempio:
+        const nome = "Luca";
+        <h1 className = "Titolo"> Ciao {nome}</h1>
+    
+    * PROPS : Permette di passare dati da componente Padre a componente figlio
+    esempio:
+    function Benvenuto(props) {
+        return <h1>Ciao, {props.nome}</h1>
+    }
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+2. HOOK FONDAMENTALI :
+
+    2.1. useState : gestisce gli "Stati", dà al componente uno stato interno, quando cambia React rirenderizza il componente aggiornandolo
+    esempio: 
+
+        import { useState } from 'react';
+        ...
+        const [contatore, setContatore] = useState(0);
+
+    2.2. useEffect : Gestisce "Effetti Collaterali", gestisce ad esempio chiamate API o timer, sostituendo il ciclo di vita 
+    esempio:
+
+        // eseguito ogni volta che cambia il contatore
+        import { useEffect } from 'react';
+        ...
+        useEffect(() => {
+            console.log("il contatore vale:", contatore);
+        }, [contatore]);
+
+    2.3. useRef : permette di avere riferimenti persistenti a elementi DOM o valori, senza far rieseguire il rendering del componente.
+    esempio:
+
+        import { useRef } from 'react';
+        ...
+        const <nomeRef> = useRef(null);
+    
+    2.4. ESEMPIO codice :
+
+        import { useState, useEffect, useRef } from 'react';
+
+        function MiniEsempio() {
+            const [contatore, setContatore] = useState(0); // stato
+            const mioRef = useRef(null); // riferimento persistente
+
+            useEffect(() => {
+                console.log("Contatore:", contatore);
+                if (mioRef.current) mioRef.current.focus(); // esempio accesso DOM
+            }, [contatore]);
+
+            setContatore(contatore + 1); // aggiorna stato
+        }
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+3. GESTIONE FORM :
+    * Un input controllato è un elemento del form il cui valore è “controllato” dallo stato del componente.
+    * Il valore dell’input è impostato tramite value={stato}
+    * Ogni modifica dell’input aggiorna lo stato tramite onChange
+    * In questo modo, lo stato e l’input sono sempre sincronizzati
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+4. RENDERING CONDIZIONALE :
+    * Mostra elementi solo se la condizione è vera
+    Sintassi: 
+        condizione ? <ComponenteVero /> : <ComponenteFalso />
+    esempio:
+        const loggedIn = true;
+        <div>
+            { loggedIn ? <p> Benvenuto </p> : <p> Effettua login </p> }
+        </div>
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+5. REACT ROUTER :
+    * E' una libreria che Permette di cambiare "pagina" senza ricaricare il Browser
+    * Link to = "/path" : link sostituisce <a> per non ricaricare
+    * “Router avvolge, Routes decide cosa mostrare, Link naviga senza ricaricare.”
+

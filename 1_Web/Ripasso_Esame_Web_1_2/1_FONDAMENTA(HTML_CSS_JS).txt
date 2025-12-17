@@ -1,0 +1,67 @@
+1. HTML e DOM :
+    * HTML è markup : serve a descrivere e strutturare il contenuto della pagina web
+    
+    * DOM : Rappresentazione ad albero degli oggetti HTML che JS manipola.
+        - La radice è <html>
+        - I rami sono <head> e <body>
+        - Le foglie sono paragrafi, immagini, link e altri elementi.
+        - JavaScript può “pescare” qualsiasi ramo o foglia e modificarlo
+
+    * Virtual DOM : Una copia leggera del DOM reale per ottimizzare le prestazioni.
+
+    1.1. TAG :
+        * Tag Block : [div, p, h1, ul] occupano tutta la larghezza e vanno a capo
+        * Tag Inline: [span, a, img] occupano solo lo spazio necessario, stanno sulla stessa riga
+        * Forzare il ritorno a capo: [display: block]
+
+    1.2. ATTRIBUTI :
+        * id : univoco
+        * class : riutilizzabile
+        * style : inline class
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+2. CSS e LAYOUT :
+    2.1. Box Model : Ogni elemento è una scatola composa da:
+        * Content - Padding (interno) - Border - Margin (esterno)
+
+    2.2. Position
+        * static → valore di default, l’elemento rimane nel flusso normale.
+        * relative → posizionamento relativo alla posizione originale, mantiene spazio occupato.
+        * absolute → posizionamento rispetto al primo elemento padre non statico.
+        * fixed → simile ad absolute, ma rimane fisso anche quando si scorre la pagina.
+        * sticky → simile a relative, ma rimane “appiccicato” quando si scorre oltre un certo punto.
+        * z-index → gestisce la sovrapposizione degli elementi, valori numerici (default 1).
+
+    2.3. Flexbox : Allinea gli elementi:
+        * display:flex      ->  contenitore padre
+        * justify-content   ->  allinea orizzontalmente
+        * align-items       ->  allinea verticalmente
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+3. JAVASCRIPT :
+    3.1. Variabili : 
+        * var : scope funzionale, è ridichiarabile , hoisting (dichiara in alto), comportamenti ambigui
+            esempio:
+            var a = 6;
+            var a = 8; // OK → a = 8
+
+        * let : scope di blocco, non sono ridichiarabili, hoisting con temporal dead zone, valore modificabile
+            esempio:
+            let a = 6;
+            let a = 8; // ERRORE -> codice bloccato
+
+        * const : scope di blocco, non ridichiarabile, non riassegnabile, obbliga l'inizializzazione
+            esempio:
+            const a = 6;
+
+    3.2. Manipolazione DOM 
+        * Interaggire con il DOM per leggere o modificare elementi HTML e CSS tramime JAVASCRIPT
+        * Le modifiche avvengono immediatamente all’esecuzione dello script
+        esempio:
+        const titolo = document.getElementById('mioTitolo');    -> seleziona dal DOM l'elemento HTML che ha id = "mioTitolo"
+        titolo.innerHTML = "Nuovo Testo";                       -> modifica il contenuto dell'elemento da "mioTitolo" a "Nuovo Testo"
+        titolo.style.color = "red";                             -> Cambia lo stile CSS impostando il colore rosso
+
+---------------------------------------------------------------------------------------------------------------------------------------------

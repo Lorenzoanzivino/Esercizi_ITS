@@ -1,0 +1,69 @@
+---------------------------------------------------------------------------------------------------------------------------------------------
+1. Qual è la differenza visiva e di codice tra un tag <ul> e un tag <ol>?
+    risposta:
+    <ul> è una lista non ordinata
+    <ol> è una lista ordinata
+---------------------------------------------------------------------------------------------------------------------------------------------
+2. Se nel file CSS scrivo #header { color: red; }, a quale elemento della pagina HTML verrà applicato lo stile? 
+    A) A tutti gli elementi <header> 
+    B) All'unico elemento con id="header" 
+    C) A tutti gli elementi con class="header"
+    risposta:
+    C) A tutti gli elementi con class="header"
+
+    ❌ B) All'unico elemento con id="header" 
+---------------------------------------------------------------------------------------------------------------------------------------------
+3. Qual è la differenza tra l'operatore == e l'operatore === in JavaScript?
+    risposta:
+    "==" è operatore di assegnazione a==6   -> a è 6
+    "===" è operatore di confronto a === 6  -> se a è 6
+
+    ❌ "==" connfronto valori , "===" confronta anche il tipo
+---------------------------------------------------------------------------------------------------------------------------------------------
+4. Analizza questo ciclo for. Quante volte verrà stampata la parola "Ciao"?
+    for (let i = 0; i < 3; i++) {
+    console.log("Ciao");
+    }
+    risposta:
+    3 volte
+---------------------------------------------------------------------------------------------------------------------------------------------
+5. Perché il seguente codice JSX restituisce un errore?
+    return (
+    <h1>Titolo</h1>
+    <p>Paragrafo</p>
+    );
+    risposta:
+    Manca il <div></div>
+---------------------------------------------------------------------------------------------------------------------------------------------
+6. Quale attributo del tag <input> devo usare per trasformare una casella di testo in una casella per inserire una password (dove i caratteri sono nascosti)?
+    <input type="password" />
+---------------------------------------------------------------------------------------------------------------------------------------------
+8. Come si concatenano (uniscono) due stringhe in JavaScript? Fai un esempio pratico.
+    risposta :
+    return "stringa 1" + "stringa 2"
+---------------------------------------------------------------------------------------------------------------------------------------------
+9. Se ho creato un componente chiamato Navbar (importato correttamente), qual è la sintassi JSX corretta per mostrarlo all'interno di App.js?
+    risposta :
+    <Navbar />
+---------------------------------------------------------------------------------------------------------------------------------------------
+10. Quale funzione nativa di JavaScript serve per far apparire una finestra popup che chiede all'utente di inserire un dato (es. "Inserisci il tuo nome")?
+    risposta:
+    form
+    ❌ prompt()
+---------------------------------------------------------------------------------------------------------------------------------------------
+11. Quale proprietà CSS devo usare se voglio nascondere completamente un elemento dalla pagina (facendo in modo che non occupi nemmeno lo spazio)?
+    risposta :
+    NON LO SO
+    ❌ display:none;
+---------------------------------------------------------------------------------------------------------------------------------------------
+12. Quando invoco la funzione che modifica lo stato (es. setContatore(5)), cosa fa React immediatamente dopo aver aggiornato il valore della variabile? 
+    A) Ricarica l'intera pagina del browser (F5) 
+    B) Esegue il re-render (ridisegna) solo del componente interessato 
+    C) Non fa nulla finché non salvo il file
+
+    risposta:
+    B) Esegue il re-render (ridisegna) solo del componente interessato 
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+6/11
