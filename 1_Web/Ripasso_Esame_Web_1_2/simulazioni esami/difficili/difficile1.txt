@@ -1,0 +1,63 @@
+LIVELLO 3 – DIFFICILE (REST API, ASYNC, ROUTER) ✅
+
+Adesso entriamo nel territorio dell’esame vero e proprio per il voto alto. Qui si parla di chiamate al server, React Router e logica asincrona.
+Tutto basato sulle slide (Fetch, Async/Await, Router 6).
+
+Domanda 1 (JS – Async/Await)
+Quando usi async/await per fare una chiamata al server, quale struttura di controllo devi usare per catturare eventuali errori (per esempio server offline)?
+A) if / else
+B) try / catch ✅
+C) .then / .catch
+
+Domanda 2 (React – Fetch)
+Hai fatto una chiamata: const response = await fetch(url). Prima di poter leggere i dati, quale operazione devi fare sulla risposta?
+A) response.toString()
+B) JSON.parse(response)
+C) await response.json() ✅
+
+Domanda 3 (React Router – Parametri) ❌
+Se hai una rotta definita come /profilo/:id, nel componente Profilo quale Hook devi importare e usare per leggere il valore id dall’URL? Completa mentalmente: 
+const { id } = ususeParams(/profilo/:id);
+
+Domanda 4 (React Router – Navigazione)
+Vuoi creare un bottone che, quando cliccato, porta l’utente alla pagina /home senza usare il tag Link, quindi tramite codice dentro una funzione. Quale Hook devi usare? Completa mentalmente: 
+const navigate = useNavigate();
+
+Domanda 5 (JS – Promise.all) ❌
+Hai tre chiamate API da fare contemporaneamente. Cosa fa Promise.all([call1, call2, call3])?
+A) Esegue le chiamate una dopo l’altra in sequenza. ✅
+B) Esegue le chiamate in parallelo e aspetta che tutte siano terminate.
+C) Esegue le chiamate e restituisce il risultato della prima che finisce.
+
+Domanda 6 (React – Form) ❌
+In una funzione che gestisce il submit di un form (onSubmit), qual è la primissima riga di codice da scrivere per evitare che la pagina si ricarichi automaticamente?
+
+Domanda 7 (React – useEffect Cleanup)
+A cosa serve la funzione che puoi ritornare all’interno di un useEffect?
+A) A modificare lo stato finale.
+B) A pulire eventuali timer, listener o effetti collaterali quando il componente viene smontato. ✅
+C) A gestire gli errori.
+
+Domanda 8 (Logica Complessa – Update Array)
+Hai una lista di oggetti: [{id:1, val:10}, {id:2, val:20}]. Vuoi incrementare di +1 solo il valore dell’oggetto con id uguale a 2. Qual è la logica corretta da usare dentro un map()?
+A) Modificare direttamente item.val con item.val++.
+B) Restituire un nuovo oggetto con spread operator solo per l’elemento con id 2, lasciando invariati gli altri. ✅
+C) Restituire direttamente item.val + 1.
+
+Domanda 9 (React – Regole degli Hook)
+Qual è la regola fondamentale sull’ordine di chiamata degli Hook come useState e useEffect?
+A) Possono essere chiamati dentro condizioni if.
+B) Devono essere chiamati sempre nello stesso ordine, mai dentro if o cicli. ✅
+C) Devono essere chiamati solo dopo il return.
+
+Domanda 10 (Definizione)
+Cos’è una SPA (Single Page Application)? Rispondi brevemente con parole tue.
+Una sola pagina, quando l'utente vuole navigare tra le pagine, anzichè caricare l'intera pagina nuova viene renderizzato solo il componente richiesto
+
+Domanda 11 (JS – Spread vs Rest)
+Nell’espressione function somma(...numeri), i tre puntini rappresentano uno Spread Operator o un Rest Parameter?
+Rest Parameter perche non ci sono altri valori o parametri
+
+Domanda 12 (Interpretazione del codice) ❌✅
+Considera una fetch che va a buon fine e una console.log eseguita subito dopo. In che ordine vengono stampate le lettere A, B e C, sapendo che la stampa di A avviene nel then, la stampa di B nel catch e la stampa di C è fuori dalla fetch?
+C, A, B

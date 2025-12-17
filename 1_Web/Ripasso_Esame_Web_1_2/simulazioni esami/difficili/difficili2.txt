@@ -1,0 +1,36 @@
+1. (Il tuo incubo: Eventi con parametri) Voglio cancellare l'elemento con id 99. Correggi questo codice che farebbe crashare React: 
+❌ onClick={elimina(99)} ✅ onClick={ () => elimina(99) }
+
+
+
+2. (Aggiornamento Stato Oggetto) Hai const [auto, setAuto] = useState({marca: "Fiat", modello: "Panda"}). Devi cambiare solo il modello in "Punto", tenendo la marca "Fiat". Completa: setAuto({ ....................... , modello: "Punto" });
+
+const [auto, setAuto] = useState({marca: "Fiat", modello: "Panda"})
+setAuto({ ...auto, modello: "Punto" });
+
+
+3. (React Router - Hook Navigazione) Sei dentro una funzione (es. dopo il login) e vuoi mandare l'utente alla "/home". const navigate = useNavigate(); Qual è la riga di codice per spostarlo? ................................................
+
+const navigate = useNavigate();
+Maps("/home")
+
+4. (Form - Blocco Ricaricamento) Hai la funzione const inviaDati = (e) => { ... }. Qual è l'istruzione obbligatoria alla riga 1? ................................................
+
+const inviaDati = (e) => { prev }
+
+5. (Stile Inline - CamelCase) Trasforma questo CSS: background-color: yellow in stile inline React. <div style={{ backgroundColor : 'yellow' }}>
+
+6. (Map - L'attributo dimenticato) Stai stampando una lista di <li>. React ti dà un warning rosso in console. Cosa manca dentro il tag <li>? <li className={item.id}> {item.nome} </li>
+
+7. (Fetch - Parsing) Hai ricevuto la risposta grezza: const res = await fetch(url); Cosa devi scrivere per estrarre i dati leggibili (JSON)? const data = await response.json()
+
+8. (Input Controllato - L'attributo mancante) Hai scritto <input value={nome} /> ma non riesci a scriverci dentro. Quale attributo manca per aggiornare lo stato? className={ (e) => setNome(e.target.value) }
+
+9. (React Router - Leggere URL) L'URL è www.sito.com/dettaglio/50. Nel codice hai <Route path="/dettaglio/:id" ... />. Come estrai quel 50? const { id } = link to = "/id"
+
+10. (JSX - Errore Padre) React si lamenta perché ritorni due div separati senza un contenitore. Qual è il tag "invisibile" (sintassi breve) per raggrupparli? Tag apertura: <> Tag chiusura: </>
+
+11. (useEffect - Dipendenze) Vuoi che il console.log("Ciao") parta solo una volta quando carichi la pagina. Cosa metti come secondo argomento di useEffect? useEffect(() => { "Ciao" }, [] );
+
+12. (Spread Operator - Array) Hai [1, 2]. Vuoi aggiungere il 3 in fondo senza usare .push(). const nuoviNumeri = [ ...Array , 3 ];
+    Non mi hai messo il nome dell'arrei quindi ho inventato Array = [1, 2]

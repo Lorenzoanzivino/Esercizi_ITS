@@ -1,0 +1,53 @@
+1.
+"async function <nome funzione> () {
+    try{
+        const risultato = await operazioneAsincrona();
+    }catch {
+        console.log("errore");
+    }
+}"
+
+2. 
+const data = await response.json();
+
+3. 
+useParams("/profilo/:id"); NO 
+const { id } = useParams(); SI 
+
+4. 
+Navigate("/home");
+
+const dati = Promise.all([call1, call2, call3]);
+Correzione: const dati = await Promise.all([...]);
+
+6. 
+e.preventDefault();
+
+7. 
+lo useEffect controlla gli effetti collaterali ed evita tramite l'utilizzo delle dipendenze di la renderizzazione non voluta
+Correzione: Serve a fare pulizia quando il componente muore (es. cancellare timer, chiudere connessioni socket) per evitare memory leak.
+
+8. 
+Non riesco
+
+9. 
+venno sempre dentro la funzione prima del return, prima useState e poi useEffect
+
+10.
+una singola pagina che non permette la rirenderizzazione delle pagine ma renderizza solo il componente
+
+11. 
+un Rest Parameter perchè che un solo parametro
+
+12. Interpretazione Codice
+Cosa stampa questo codice e in che ordine?
+
+fetch('https://api.com')
+  .then(res => console.log("A"))
+  .catch(err => console.log("B"));
+console.log("C");
+
+C , A
+
+
+7/12
