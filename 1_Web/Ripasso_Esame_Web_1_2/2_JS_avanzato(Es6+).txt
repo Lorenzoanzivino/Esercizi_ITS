@@ -1,5 +1,14 @@
+BLOCCO 2
+
+0. MODULI (Import / Export) :
+    * Meccanismo per dividere il codice in più file e riutilizzarlo. 
+    * Export : Rende disponibile una funzione o variabile.
+    * Import : Richiama il codice da un altro file.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
 1. DESTRUTTURAZIONE (Destructuring) :
-    * Estrae oggetti o dati dall'array in modo rapido
+    * Estrae oggetti o dati dall'array in modo rapido salvandoli in variabili
     esempio:
     // oggetti
     const utente = { nome: "mario", eta: 25 };
@@ -12,7 +21,7 @@
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 2. SPREED OPERATOR (...) :
-    * espande un array o un'oggetto, usato per copiare o unire array senza modificare l'originale, ne crea uno Nuovo
+    * espande un array o un'oggetto, usato per copiare o unire array senza modificare l'originale, * Ne crea uno Nuovo
     esempio:
     const vecchioArray1 = [1, 2];
     const vecchioArray2 = [3, 4];
@@ -23,7 +32,21 @@
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
-3. ARROW FUNCTION 
+3. METODI ARRAY :
+    * .map() : Trasforma ogni elemento di un array e restituisce un nuovo array della stessa lunghezza.
+        * Uso in React: Per stampare liste di componenti partendo da un array di dati.
+    * .filter() : Restituisce un nuovo array contenente solo gli elementi che soddisfano la condizione (true). 
+        * Uso: Per rimuovere elementi o cercare.
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+4. CLASSIC FUNCTION : function nome() {}
+    * This : Dinamico. Dipende da chi chiama la funzione.
+    * This : Lessicale. Eredita il this dal contesto padre, Fondamentale nelle callback.
+    * Arguments : Possiede l'oggetto arguments (lista dei parametri passati).
+
+
+4.1 ARROW FUNCTION :
     const <nome funzione> = () => {};
     * Funzione scritta in forma compatta con operatore => che semplifica la sintassi, non hanno un proprio this
     esempio:
@@ -37,11 +60,14 @@
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
-4. ASYNC/AWAIT e PROMISE :
+5. ASYNC/AWAIT e PROMISE :
+    "Non si può usare il risultato di una chiamata asincrona dentro un flusso sincrono senza attendere."
+
     * Async/await e Promise permettono di gestire operazioni asincrone in JavaScript in modo più leggibile rispetto ai callback.
     * async : restituisce sempre una Promise, anche se ritorna un valore normale.
     * await : permette di attendere il risultato della promise in modo sincrono
     * Promise : rappresenta il risultato futuro di un’operazione asincrona, che può essere risolta, rifiutata o in attesa.
+    
     esempio:
     async function <nome funzione>() {
         try {
@@ -51,3 +77,19 @@
             console.error(errore);
         }
     }
+
+    ---------------------------------------------------------------------
+    
+    Esempio Completo :**
+        ```javascript
+        async function getDati() {
+            try {
+                // await blocca questa riga finché non arriva la risposta
+                const risposta = await fetch('https://api.esempio.com');
+                const dati = await risposta.json();
+                console.log(dati); // Qui i dati esistono
+            } catch (errore) {
+                console.error("Errore nella chiamata:", errore);
+            }
+        }
+        ```

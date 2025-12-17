@@ -1,3 +1,5 @@
+BLOCCO 1
+
 1. HTML e DOM :
     * HTML è markup : serve a descrivere e strutturare il contenuto della pagina web
     
@@ -12,20 +14,27 @@
     1.1. TAG :
         * Tag Block : [div, p, h1, ul] occupano tutta la larghezza e vanno a capo
         * Tag Inline: [span, a, img] occupano solo lo spazio necessario, stanno sulla stessa riga
-        * Forzare il ritorno a capo: [display: block]
+        * Display Inline-Block: sta sulla riga, Ma setta dimensioni (width/height) come un blocco
+        * Forzare il ritorno a capo: [display: block] manda elementi inline a capo
 
     1.2. ATTRIBUTI :
-        * id : univoco
-        * class : riutilizzabile
+        * id : univoco per pagina
+        * class : riutilizzabile per più elementi
         * style : inline class
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 2. CSS e LAYOUT :
-    2.1. Box Model : Ogni elemento è una scatola composa da:
+
+    2.1. Box Model : 
+        * Ogni elemento è una scatola composa da:
         * Content - Padding (interno) - Border - Margin (esterno)
 
-    2.2. Position
+    2.2. Selettori e Pseudocodici :
+        * Selettori : Si usano per Puntare gli elementi
+        * Pseudoclassi : Definiscono stato speciale di un elemento
+
+    2.3. Position :
         * static → valore di default, l’elemento rimane nel flusso normale.
         * relative → posizionamento relativo alla posizione originale, mantiene spazio occupato.
         * absolute → posizionamento rispetto al primo elemento padre non statico.
@@ -33,14 +42,19 @@
         * sticky → simile a relative, ma rimane “appiccicato” quando si scorre oltre un certo punto.
         * z-index → gestisce la sovrapposizione degli elementi, valori numerici (default 1).
 
-    2.3. Flexbox : Allinea gli elementi:
+    2.4. Flexbox : Allinea gli elementi:
         * display:flex      ->  contenitore padre
+        * flex-direction    ->  definisce assi: **row** orizzontale o **column** (verticale).
         * justify-content   ->  allinea orizzontalmente
         * align-items       ->  allinea verticalmente
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 3. JAVASCRIPT :
+
+    * Single Thread : JS esegue una sola istruzione alla volta
+    * Sincrono : Il codice viene letto ed eseguito riga per riga dall'alto in basso
+
     3.1. Variabili : 
         * var : scope funzionale, è ridichiarabile , hoisting (dichiara in alto), comportamenti ambigui
             esempio:
