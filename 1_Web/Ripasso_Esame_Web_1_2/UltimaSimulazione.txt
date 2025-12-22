@@ -1,0 +1,135 @@
+🎓 SIMULAZIONE ESAME (Basata sul modello "Syber")
+✅ DOMANDE CHIUSE – WEB1 (JavaScript & CSS)
+
+1️⃣ In Flexbox, quale proprietà serve a distribuire lo spazio tra gli elementi sull'asse principale (es. per mandarli agli estremi)? A) align-items B) justify-content C) flex-direction
+risposta:
+B) justify-content
+
+2️⃣ Quale metodo dell'oggetto Response (della fetch) devi usare per leggere il corpo della risposta come oggetto JavaScript? A) .parse() B) .json() C) .read()
+risposta:
+B) .json()
+
+3️⃣ Qual è la differenza tra let e const? A) const ha visibilità globale, let no. B) let permette di riassegnare il valore, const no. C) Non c'è differenza, sono sinonimi.
+risposta:
+B) let permette di riassegnare il valore, const no.
+
+✅ DOMANDE CHIUSE – WEB2 (React)
+
+
+4️⃣ Cosa succede se passi un array vuoto [] come secondo argomento a useEffect? A) L'effetto viene eseguito a ogni render. B) L'effetto non viene mai eseguito. C) L'effetto viene eseguito solo una volta al montaggio (avvio).
+risposta:
+C) L'effetto viene eseguito solo una volta al montaggio (avvio).
+
+5️⃣ In React, quale attributo si usa al posto di class per definire le classi CSS? A) class B) styleClass C) className
+risposta:
+C) className
+
+6️⃣ Se hai un componente <Saluto nome="Mario" />, come leggi "Mario" dentro il componente? A) props.nome B) state.nome C) children.nome
+risposta:
+A) props.nome
+
+📝 DOMANDE APERTE – WEB1 (Logica e JS)
+
+7️⃣ Cosa fa document.getElementById('titolo').textContent = 'Ciao'? (Descrivi l'azione sul DOM)
+risposta:
+Cerca l'elemento HTML che ha id="titolo" e sostituisce il suo testo interno con la parola "Ciao"
+
+8️⃣ Cosa fa il metodo array.map(...)? (Spiega la differenza rispetto a un semplice ciclo for o forEach)
+risposta:
+.map() Fa un giro, modifica ogni elemento e ti restituisce un NUOVO array con i valori modificati.
+
+9️⃣ Cosa stampa console.log("5" * 2) e perché? (Attenzione: qui c'è un per *, non un più +)
+risposta:
+Stampa 10 perche JS prova a convertire la stringa "5" in numero e fa il calcolo.
+
+
+📝 DOMANDE APERTE – WEB2 (Concetti React)
+
+🔟 A cosa servono le parentesi graffe { } dentro il JSX? (Esempio: <h1>{titolo}</h1>)
+risposta:
+Le graffe servono per utilizzare un oggetto
+
+1️⃣1️⃣ Perché in React non possiamo usare un if classico direttamente dentro il return del JSX (es. return ( if(...) ))? (Spiega cosa bisogna usare al suo posto, es. ternario o &&)
+risposta:
+Perché il return deve restituire un valore immediato. L'if è un blocco di codice che non restituisce un valore.
+
+1️⃣2️⃣ Cos'è lo "Stato" (useState) in parole semplici e in cosa differisce da una normale variabile let?
+risposta:
+lo useState è un hook che gestisce il cambiamento di un valore facendo il re-rendering solo del componente
+
+💻 ESERCIZI PRATICI
+
+Traccia ESERCIZIO 13 – JavaScript (DOM Manipulation) Hai questo HTML: <h1 id="titolo">Benvenuto</h1> <button id="btn">Cambia</button>
+
+Scrivi il codice JavaScript per:
+
+    Selezionare il bottone e l'h1.
+
+    Aggiungere un evento 'click' al bottone.
+
+    Quando clicchi, il testo dell'h1 deve diventare "Esame Superato!".
+
+(Scrivi il codice JS qui sotto)
+Risposta:
+// 1. Seleziono gli elementi
+const titolo = document.getElementById("titolo");
+const bottone = document.getElementById("btn");
+
+// 2. Aggiungo l'ascoltatore dell'evento 'click'
+bottone.addEventListener("click", () => {
+    
+    // 3. Cambio il testo
+    titolo.textContent = "Esame Superato!";
+    
+    // (Opzionale) Cambio anche il colore per bellezza
+    titolo.style.color = "green";
+});
+
+Traccia ESERCIZIO 14 – React (Rendering Condizionale) Dato il seguente codice iniziale:
+JavaScript
+
+import { useState } from "react";
+
+function Interruttore() {
+  const [acceso, setAcceso] = useState(false);
+
+  return (
+      // SCRIVI QUI IL CODICE
+  );
+}
+
+Obiettivo:
+
+    Crea un bottone con scritto "Premi".
+
+    Al click, lo stato acceso deve invertitirsi (da true a false e viceversa).
+
+    SOTTO il bottone, mostra la scritta "LUCE ON" solo se acceso è true, altrimenti "LUCE OFF".
+
+(Scrivi il return completo qui sotto)
+risposta:
+import { useState } from "react";
+
+function Interruttore() {
+  const [acceso, setAcceso] = useState(false);
+
+  return (
+    <>
+      {/* 1. Il Bottone che inverte lo stato */}
+      {/* Usa il punto esclamativo ! per dire "il contrario di quello che è ora" */}
+      <button onClick={() => setAcceso(!acceso)}>
+        Premi
+      </button>
+
+      {/* 2. Logica Ternaria: Se acceso è vero scrivi ON, altrimenti OFF */}
+      <p>
+        {acceso ? "LUCE ON" : "LUCE OFF"}
+      </p>
+      
+      {/* Alternativa con stile condizionale (Bonus) */}
+      <h2 style={{ color: acceso ? "green" : "red" }}>
+          Stato: {acceso ? "Attivo" : "Spento"}
+      </h2>
+    </>
+  );
+}
