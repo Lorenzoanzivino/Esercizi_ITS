@@ -1,0 +1,112 @@
+Esame di syber "DOMANDE CHIUSE – WEB1
+1️⃣ In Flexbox, quale proprietà allinea gli elementi lungo l’asse trasversale?
+✔️ B) align-items
+👉 Justify-content lavora sull’asse principale; align-items sull’asse perpendicolare.
+2️⃣ Quale oggetto rappresenta la risposta di una fetch?
+✔️ B) response
+👉 fetch() → ritorna una Promise che contiene un oggetto Response.
+3️⃣ Quale metodo seleziona il primo elemento che corrisponde a un selettore CSS?
+✔️ B) querySelector
+👉 getElementsByClassName restituisce una lista; querySelector restituisce il primo elemento.
+✅ DOMANDE CHIUSE – WEB2
+4️⃣ Cosa succede se una fetch in useEffect non gestisce errori?
+✔️ B) Errore silenzioso / non gestito
+👉 React non blocca, ma l’errore non viene mostrato chiaramente.
+5️⃣ Quale componente evita il reload della pagina?
+✔️ B) Link (di React Router)
+👉 <a> ricarica la pagina, <Link> NO.
+6️⃣ Le props possono essere modificate dal figlio?
+✔️ B) No
+👉 Le props sono sola lettura.
+✅ DOMANDE APERTE – WEB1
+7️⃣ Cosa fa element.classList.remove('hidden') ?
+👉 Rimuove la classe "hidden" dalla lista delle classi dell’elemento.
+Se l’elemento era nascosto, torna visibile.
+8️⃣ Cosa fa array.push(5) ?
+👉 Aggiunge il valore 5 alla fine dell’array
+👉 Restituisce la nuova lunghezza dell’array.
+9️⃣ Cosa stampa console.log("10" + 5) e perché?
+👉 Stampa "105"
+Perché "10" è una stringa → JavaScript fa concatenazione, non somma."
+🔟 Perché è necessaria la key nelle liste React?
+👉 Serve per permettere a React di:
+riconoscere ogni elemento
+aggiornare solo quello che cambia
+migliorare le performance
+Senza key React può sbagliare a gestire gli elementi.
+1️⃣1️⃣ Cosa fa <> </> in JSX ?
+👉 È un React Fragment
+Serve per racchiudere più elementi senza creare un div nel DOM.
+1️⃣2️⃣ Spiega perché React evita la manipolazione diretta del DOM
+👉 React usa il Virtual DOM.
+Se tocchi il DOM manualmente:
+React non se ne accorge
+lo stato e il DOM possono “non corrispondere” Per questo React gestisce lui il DOM
+
+Esercizi
+Traccia ESERCIZIO 13 – JavaScript (DOM)
+Dato il seguente codice JavaScript:
+Copia codice
+Js
+const utenti = ["Mario", "Luigi", "Peach"];
+1️⃣ Iterare l’array
+2️⃣ Creare una lista HTML (ul)
+3️⃣ Inserire ogni valore dell’array come elemento li
+4️⃣ Stampare la lista nel DOM
+
+ESERCIZIO 13 (JavaScript – lista nel DOM)
+Dato:
+Copia codice
+Js
+const utenti = ["Mario", "Luigi", "Peach"];
+✔️ Soluzione semplice
+
+Js
+const utenti = ["Mario", "Luigi", "Peach"];
+
+const lista = document.createElement("ul");
+
+utenti.forEach(utente => {
+  const li = document.createElement("li");
+  li.textContent = utente;
+  lista.appendChild(li);
+});
+
+document.body.appendChild(lista);
+
+Traccia ESERCIZIO 14 – React (useState)
+Dato il seguente codice React:
+Copia codice
+Js
+const [numero, setNumero] = useState(0);
+1️⃣ Stampare il valore nel JSX
+2️⃣ Creare un bottone
+3️⃣ Incrementare il valore al click
+4️⃣ Aggiornare lo stato
+
+
+ESERCIZIO 14 (React – useState)
+✔️ Soluzione corretta
+Copia codice
+Jsx
+import { useState } from "react";
+
+function MioComponente() {
+  const [numero, setNumero] = useState(0);
+
+  return (
+    <>
+      <h1>{numero}</h1>
+
+      <button onClick={() => setNumero(numero + 1)}>
+        Incrementa
+      </button>
+    </>
+  );
+}
+
+export default MioComponente;
+Spiegazione: 1️⃣ Stato parte da 0
+2️⃣ Lo stampi nel JSX
+3️⃣ Bottone
+4️⃣ Al click → incrementa e aggiorna lo stato
