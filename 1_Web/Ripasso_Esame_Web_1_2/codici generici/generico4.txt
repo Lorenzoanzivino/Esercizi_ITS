@@ -1,0 +1,124 @@
+1️⃣ Schema mentale da ricordare
+
+Ogni componente React “base” può essere sempre visto così:
+
+import { useState, useEffect, useRef } from "react";
+
+const NomeComponente = () => {
+
+  // 1. Stati principali
+  const [valore, setValore] = useState(...);
+  const [lista, setLista] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [errore, setErrore] = useState(false);
+
+  // 2. Ref (input / div / focus)
+  const ref = useRef(null);
+
+  // 3. Funzioni evento
+  const azione = () => {...};
+  const reset = () => {...};
+
+  // 4. useEffect fetch / mount
+  useEffect(() => {
+    const fetchDati = async () => {
+      try {
+        const res = await fetch("URL");
+        const dati = await res.json();
+        setLista(dati);
+      } catch {
+        setErrore(true);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchDati();
+  }, []);
+
+  // 5. Rendering condizionale
+  if (loading) return <p>Caricamento...</p>;
+  if (errore) return <p>Errore</p>;
+
+  // 6. JSX
+  return (
+    <div ref={ref}>
+      <button onClick={azione}>Azione</button>
+      <button onClick={reset}>Reset</button>
+      <p>{valore}</p>
+      <ul>
+        {lista.map((el,i) => <li key={i}>{el}</li>)}
+      </ul>
+    </div>
+  );
+};
+
+export default NomeComponente;
+
+
+Tutto qui. Questo schema mentale copre qualsiasi esercizio base: contatore, lista da API, input, toggle, form, ecc.
+
+2️⃣ Trucchetto da penna
+
+Quando scrivi a mano:
+
+Scrivi import e struttura base
+
+import { useState, useEffect, useRef } from "react";
+const NomeComponente = () => { return <div></div> };
+export default NomeComponente;
+
+
+Aggiungi subito gli stati
+
+const [valore, setValore] = useState(0);
+const [lista, setLista] = useState([]);
+const [loading, setLoading] = useState(true);
+const [errore, setErrore] = useState(false);
+
+
+Aggiungi funzioni generiche
+
+const azione = () => setValore(valore + 1);
+const reset = () => { setValore(0); setLista([]); setErrore(false); };
+
+
+Aggiungi useEffect fetch
+
+useEffect(() => {
+  const fetchDati = async () => {
+    try { const dati = await (await fetch("URL")).json(); setLista(dati); }
+    catch { setErrore(true); }
+    finally { setLoading(false); }
+  };
+  fetchDati();
+}, []);
+
+
+Rendering condizionale
+
+if (loading) return <p>Caricamento...</p>;
+if (errore) return <p>Errore</p>;
+
+
+JSX finale
+
+return (
+  <div>
+    <button onClick={azione}>Azione</button>
+    <button onClick={reset}>Reset</button>
+    <p>{valore}</p>
+    <ul>{lista.map((el,i)=><li key={i}>{el}</li>)}</ul>
+  </div>
+);
+
+3️⃣ Regole da professore
+
+Non ti fermare a scrivere dettagli (come nomi variabili o URL esatti) → scrivi valore, lista, URL come segnaposto
+
+Adatta l’evento azione: incrementa, toggle, push in lista
+
+Adatta JSX: <p>, <ul>, <input> → quello che serve
+
+Focus: se serve un input, aggiungi ref e leggi ref.current.value
+
+Errori e loading: sempre pronti, non ci pensi più

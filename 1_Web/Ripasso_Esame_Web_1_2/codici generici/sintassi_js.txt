@@ -1,0 +1,58 @@
+const {nome} = utente; -> Destructuring
+
+const saluta = () => "Ciao"; -> Arrow Function
+
+<condizione> x > 0 ? "Vero" : "Falso" -> ternario
+
+
+import { useState } from 'react'
+
+const MioComponente = () => {
+    const [contatore, setContatore] = useState(0);
+    return (
+        <div>
+            <h1>Valore : {contatore}</h1>
+        </div>
+    );
+};
+export default MioCOmponente;
+
+---
+
+import {useState} from 'react;
+const NomeFunzione = () => {
+    const [nome, setNome] = useState("");
+
+    return (
+        <div>
+            <h1>Nome : {nome}</h1>
+        </div>
+    );
+};
+export default nomeFunzione;
+
+---
+
+import {useState} from 'react';
+
+const NomeFunzione = () => {
+    const [ora, setOra] = useState(0);
+    return(
+        <div>
+            <h2>Ora : {ora}</h2>
+        </div>
+    );
+};
+export default nomeFunzione;
+
+
+---
+
+
+return(
+    <ul>
+        {nomi.map((nome, index) => (
+            <li key={index}>{nome}</li>
+        ))}
+    </ul>
+);

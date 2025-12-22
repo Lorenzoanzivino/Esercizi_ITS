@@ -1,0 +1,24 @@
+import { useState, useEffect } from 'react';
+
+const Funzione = () => {
+    const [nome, setNome] = useState("Lorenzo");
+
+    useEffect(() => {
+        const ScaricaDati = async () => {
+            try {
+                const risposta = await fetch("url");
+                const dati = await risposta.json();
+                setNome(dati.nome);
+            } catch (errore) {
+                console.log("errore");
+            }
+        };
+
+        ScaricaDati(); // Perfetto!
+
+    }, []); // <--- GUARDA QUI: Graffa chiusa, VIRGOLA, Quadre, Tonda chiusa.
+
+    return (
+        <h1>{nome}</h1>
+    );
+};

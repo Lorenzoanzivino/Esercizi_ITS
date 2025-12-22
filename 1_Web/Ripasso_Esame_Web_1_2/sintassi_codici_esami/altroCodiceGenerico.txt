@@ -1,0 +1,61 @@
+import { useState, useEffect, useRef } from 'react';
+const Componente = () => {
+  const [dato, setDato] = useState(null);
+  const [lista, setLista] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [errore, setErrore] = useState(null);
+  const ref = useRef(null);
+  const azione = () => {
+    setDato(prev => prev);
+  };
+  const reset = () => {
+    setDato(null);
+    setLista([]);
+    setErrore(null);
+  };
+  useEffect(() => {
+    const esegui = async () => {
+      setLoading(true);
+      try {
+        const risposta = await fetch("URL");
+        if (!risposta.ok) throw new Error();
+        const dati = await risposta.json();
+        setLista(dati);
+      } catch (e) {
+        setErrore(true);
+      } finally {
+        setLoading(false);
+      }
+    };
+    esegui();
+  }, []);
+  if (loading) {
+    return <p>Caricamento...</p>;
+  }
+  if (errore) {
+    return <p>Errore</p>;
+  }
+  return (
+    <div ref={ref}>
+      <button onClick={azione}>Azione</button>
+      <button onClick={reset}>Reset</button>
+
+      {dato && <p>{dato}</p>}
+
+      <ul>
+        {lista.map((el, i) => (
+          <li key={i}>{el}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+export default Componente;
+Come usarlo all’esame (questa parte leggila, non la scrivi)
+    Serve un contatore → usi dato
+    Serve una lista da fetch → usi lista
+    Serve caricamento / errore → già pronti
+    Serve un ref → ce l’hai
+    Serve un evento → azione
+    Serve un reset → reset
+    Serve useEffect → già impostato correttamente

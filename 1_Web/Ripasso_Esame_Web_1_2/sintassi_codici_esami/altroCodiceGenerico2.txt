@@ -1,0 +1,156 @@
+import { useState, useEffect, useRef } from 'react';
+
+const Componente = () => {
+
+  /* =========================
+     useState — STATO SEMPLICE
+     ========================= */
+
+  // esempio: contatore, testo input, boolean
+  const [dato, setDato] = useState(0);
+  // uso reale:
+  // setDato(dato + 1);
+  // setDato("ciao");
+  // setDato(true);
+
+  /* =========================
+     useState — STATO LISTA
+     ========================= */
+
+  // esempio: lista utenti, prodotti, post
+  const [lista, setLista] = useState([]);
+  // uso reale:
+  // setLista(datiDaApi);
+  // setLista(prev => [...prev, nuovoElemento]);
+
+  /* =========================
+     useState — LOADING / ERRORE
+     ========================= */
+
+  const [loading, setLoading] = useState(false);
+  // uso reale:
+  // setLoading(true); prima del fetch
+  // setLoading(false); alla fine
+
+  const [errore, setErrore] = useState(null);
+  // uso reale:
+  // setErrore("Errore di rete");
+
+  /* =========================
+     useRef — RIFERIMENTO DOM
+     ========================= */
+
+  const inputRef = useRef(null);
+  // uso reale:
+  // inputRef.current.focus();
+  // inputRef.current.value = "";
+
+  /* =========================
+     FUNZIONI / EVENTI
+     ========================= */
+
+  // esempio: bottone incrementa
+  const incrementa = () => {
+    setDato(dato + 1);
+  };
+
+  // esempio: reset generale
+  const reset = () => {
+    setDato(0);
+    setLista([]);
+    setErrore(null);
+  };
+
+  // esempio: leggere valore input
+  const leggiInput = () => {
+    const valore = inputRef.current.value;
+    setDato(valore);
+  };
+
+  /* =========================
+     useEffect — CICLO DI VITA
+     ========================= */
+
+  // esempio: fetch dati al mount
+  useEffect(() => {
+    const fetchDati = async () => {
+      setLoading(true);
+
+      try {
+        const risposta = await fetch("https://jsonplaceholder.typicode.com/users");
+
+        if (!risposta.ok) {
+          throw new Error("Errore HTTP");
+        }
+
+        const dati = await risposta.json();
+
+        // esempio: dati = array utenti
+        setLista(dati);
+      } catch (e) {
+        setErrore("Errore nel caricamento");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchDati();
+  }, []);
+  // [] → eseguito UNA SOLA VOLTA (mount)
+
+  /* =========================
+     RENDER CONDIZIONALE
+     ========================= */
+
+  if (loading) {
+    return <p>Caricamento...</p>;
+  }
+
+  if (errore) {
+    return <p>{errore}</p>;
+  }
+
+  /* =========================
+     JSX / INTERFACCIA
+     ========================= */
+
+  return (
+    <div>
+
+      {/* esempio: input con ref */}
+      <input ref={inputRef} type="text" />
+
+      {/* esempio: bottoni */}
+      <button onClick={incrementa}>Incrementa</button>
+      <button onClick={leggiInput}>Leggi Input</button>
+      <button onClick={reset}>Reset</button>
+
+      {/* esempio: output stato singolo */}
+      <p>Dato: {dato}</p>
+
+      {/* esempio: output lista */}
+      <ul>
+        {lista.map((el) => (
+          <li key={el.id}>{el.name}</li>
+        ))}
+      </ul>
+
+    </div>
+  );
+};
+
+export default Componente;
+
+Come usarlo DAVVERO all’esame (questa parte è oro)
+
+Quando vedi l’esercizio:
+
+    contatore → tieni dato, butta lista
+
+    fetch → tieni lista + loading + errore
+
+    form/input → tieni useRef
+
+    click / logica → guardi le funzioni
+
+    messaggi condizionali → guardi i return

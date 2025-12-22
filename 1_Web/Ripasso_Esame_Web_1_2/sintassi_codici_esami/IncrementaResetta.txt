@@ -1,0 +1,27 @@
+import React, { useState } from 'react';
+
+const Contatore = () => {
+  // 1. Dichiarazione dello stato (Hook)
+  // [valoreCorrente, funzionePerModificarlo] = useState(valoreIniziale)
+  const [count, setCount] = useState(0);
+
+  // 2. Definizione delle funzioni handler
+  const handleIncrement = () => {
+    setCount(count + 1);
+  };
+
+  const handleReset = () => {
+    setCount(0);
+  };
+
+  // 3. Return (La UI semplificata)
+  return (
+    <div>
+      <p>Totale: {count}</p>
+      <button onClick={handleIncrement}>+</button>
+      <button onClick={handleReset}>Reset</button>
+    </div>
+  );
+};
+
+export default Contatore;

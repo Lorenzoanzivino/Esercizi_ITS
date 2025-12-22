@@ -1,0 +1,134 @@
+20 domande HTML/CSS/Bootstrap/JavaScript (≥10 JS)
+HTML / CSS / Bootstrap (10)
+
+1. HTML: A cosa serve <!DOCTYPE html> e cosa cambia se manca?
+    RISPOSTA : Dice al browser che il documento è HTML5 e evita renderin “quirks” non standard.
+
+2. HTML: Differenza tra tag block e inline con un esempio pratico.
+    RISPOSTA : I block vanno a capo e occupano tutta la riga (es. div ), gli inline no (es.span / a ).
+
+3. HTML: Quando useresti div e quando un tag più “semantico” (es. header , main ,
+article )?
+    RISPOSTA : div è generico; i tag semantici descrivono il contenuto e aiutano SEO/accessibilità.
+
+4. HTML (form): Differenza tra GET e POST in un form: quando conviene uno o l’altro?
+    RISPOSTA : GET mette i dati in URL (ok per ricerche), POST li invia nel body (meglio per dati sensibili/grandi).
+
+5. HTML (form): Perché usare label con attributo for collegato a id ?
+    RISPOSTA : Migliora accessibilità e permette di selezionare il campo cliccando sul testo della label.
+
+6. CSS: Spiega il box model e differenza tra margin e padding .
+    RISPOSTA : Contenuto→padding→border→margin; padding è spazio interno, margin è spazio esterno.
+
+7. CSS: Differenza tra selettore id e class e quando scegliere l’uno o l’altro.
+    RISPOSTA : id è unico e più specifico, class riutilizzabile su più elementi (di solito preferisci class).
+
+8. CSS: Spiega position: relative , absolute , fixed con un caso d’uso
+ciascuno.
+    RISPOSTA : relative sposta rispetto a sé; absolute rispetto all’antenato posizionato; fixed resta fissato in viewport.
+
+9. Bootstrap: Come funziona la grid a “12 colonne” e cosa fa col-md-6 col-12 ?
+    RISPOSTA : La riga è divisa in 12; md-6 metà riga su schermi medi+, col-12 piena larghezza su piccoli.
+
+10. Bootstrap: Perché la meta viewport è importante nei layout responsive?
+    RISPOSTA : Imposta scaling e larghezza corretta sul device, evitando layout “zoomati” o non responsive.
+
+-------------------------------------------------------------------------------
+
+JavaScript (10)
+
+11. JS: Perché è rischioso creare variabili “implicite” senza let/const ?
+    RISPOSTA : Diventano globali (o causano errori in strict mode), aumentando bug e collisioni di nomi.
+
+12. JS: Differenza tra let , const e var (scope e comportamento).
+    RISPOSTA : let/const hanno block-scope; var function-scope e hoisting più “pericoloso”.
+
+13. JS: Differenza tra == e === : quando usare === ?
+    RISPOSTA : == fa coercizione di tipo, === no; in genere usa sempre === per evitare sorprese.
+
+14. JS: Cosa succede con + se uno degli operandi è stringa? Fai un esempio.
+    RISPOSTA : Concatena: "1" + 2 → "12" ; può generare bug se ti aspettavi somma numerica.
+
+15. JS: Perché NaN === NaN è false e come controlli correttamente NaN ?
+    RISPOSTA : NaN non è uguale a nulla, nemmeno a sé; usa Number.isNaN(val) .
+
+16. JS (array): Cosa significa che gli array sono “dinamici” e cosa può succedere con length ?
+    RISPOSTA : Possono crescere/ridursi; assegnare a un indice alto crea “buchi” e length salta.
+
+17. JS (cicli): Differenza tra for...in e for...of sugli array.
+    RISPOSTA : for...in scorre le chiavi/indici, for...of i valori (di solito preferibile per array).
+
+18. JS (DOM): Come selezioni un elemento e gli agganci un evento click ?
+    RISPOSTA : document.querySelector(...) + addEventListener("click", handler) .
+
+19. JS (async): Spiega async/await e come gestisci errori di rete o HTTP.
+    RISPOSTA : await attende Promise; usa try/catch e controlla response.ok per errori HTTP.
+
+20. JS (fetch): Descrivi il flusso tipico fetch → json() → render e un punto critico.
+    RISPOSTA : fetch(url) → await res.json() → aggiorni DOM; critico: gestire loading/error e res.ok
+
+----------------------------------------------------------------------------------------------
+
+20 domande React (aperte, risposta ≤2 righe)
+
+1. React: Cos’è il Virtual DOM e perché può migliorare le performance?
+Risposta: React calcola differenze (diff) e aggiorna solo parti necessarie del DOMreale.
+
+2. React: Differenza tra props e state: chi li modifica e dove vivono?
+Risposta: Props arrivano dal parent e sono read-only; state è interno e si aggiorna con setState/hook.
+
+3. Hooks: Cos’è un Hook e perché si usano nei componenti funzionali?
+Risposta: API per stato/lifecycle nei functional components, evitando classi e rendendo logica riutilizzabile.
+
+4. useState: Cosa restituisce useState e perché si usa [value, setValue] ?
+Risposta: Restituisce stato e funzione di update; la destrutturazione rende chiaro l’uso.
+
+5. Aggiornamento state: Perché usare setCount(prev => prev + 1) ?
+Risposta: Evita problemi con state “stale” quando più update avvengono nello stesso ciclo.
+
+6. Immutabilità: Perché non modificare direttamente array/oggetti nello state?
+Risposta: React rileva cambi tramite nuove reference; usa spread/map/filter per
+creare copie aggiornate.
+
+7. useEffect: Quando si esegue un effect con dipendenze [] ?
+Risposta: Solo al mount (prima render), utile per fetch iniziale.
+
+8. useEffect deps: Cosa succede se ometti l’array delle dipendenze?
+Risposta: L’effetto gira a ogni render → rischio loop e chiamate fetch ripetute.
+
+9. Cleanup: Cos’è la cleanup function e quando viene chiamata?
+Risposta: Ritorno di useEffect ; si esegue su unmount o prima del prossimo effect (dipendenze cambiate).
+
+10. Fetch in React: Come gestisci loading , error e dati durante un fetch?
+Risposta: State separati (o unico oggetto) + render condizionale: loading spinner, error message, lista dati.
+
+11. AbortController: Perché può servire su fetch dentro useEffect ?
+Risposta: Evita setState dopo unmount e richieste inutili quando cambi pagina/ parametri.
+
+12. Keys: Perché key è importante quando fai .map() in JSX?
+Risposta: Aiuta React a riconciliare la lista correttamente, evitando bug e re-render inutili.
+
+13. Controlled components: Cos’è un input controllato e perché conviene?
+Risposta: Il value deriva dallo state e si aggiorna con onChange , così validi e gestisci form facilmente.
+
+14. Lifting state up: Quando “alzi” lo state al parent?
+Risposta: Quando più componenti devono condividere/aggiornare gli stessi dati.
+
+15. Conditional rendering: Esempio tipico di rendering condizionale.
+Risposta: Ternario: loading ? "Caricamento..." : <Lista /> .
+
+16. useRef: A cosa serve useRef e differenza rispetto a useState ?
+Risposta: Mantiene un riferimento mutabile senza re-render; utile per DOM (focus) o valori persistenti.
+
+17. useContext: Che problema risolve (prop drilling) e quando lo useresti?
+Risposta: Condivide dati globali (tema/utente) senza passarli a catena via props.
+
+18. Router: Perché serve React Router in una SPA?
+Risposta: Gestisce pagine/rotte senza refresh, mantenendo stato e navigazione client-side.
+
+19. Router hooks: A cosa serve useParams e quando lo usi?
+Risposta: Legge parametri URL (es. /:id ) per fetch di risorse specifiche.
+
+20. Performance: Quando ha senso usare React.memo o useMemo ?
+Risposta: Quando re-render sono costosi e props invariati; memorizzi componenti o calcoli pesanti.
+

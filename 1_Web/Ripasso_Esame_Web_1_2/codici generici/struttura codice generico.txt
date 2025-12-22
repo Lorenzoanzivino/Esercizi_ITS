@@ -1,0 +1,109 @@
+import { useState, useEffect, useRef } from 'react';
+// Aggiungi questo import SOLO se l'esercizio parla di ID nell'URL
+import { useParams } from 'react-router-dom'; 
+
+const EsercizioMaster = (props) => {
+
+    // --- BLOCCO 0: SETUP INIZIALE ---
+    // Se servono parametri dall'URL (es. /profilo/:id)
+    const { id } = useParams(); 
+    // Se servono props dal padre
+    const { titolo } = props;
+
+
+    // --- BLOCCO 1: SE DEVI SCARICARE DATI (Fetch) ---
+    // Usalo se leggi: "Lista", "API", "JSONPlaceholder", "Carica dati"
+    const [dati, setDati] = useState([]);
+    
+    useEffect(() => {
+        const scarica = async () => {
+            try {
+                // Ricorda i backtick ` se devi inserire l'ID
+                const res = await fetch(`https://api.com/v1/${id}`);
+                const json = await res.json();
+                setDati(json);
+            } catch (err) {
+                console.log("Errore:", err);
+            }
+        };
+        scarica();
+    }, [id]); // Array vuoto [] se è una volta sola, [id] se dipende dall'URL
+
+
+    // --- BLOCCO 2: SE DEVI GESTIRE INPUT/FORM ---
+    // Usalo se leggi: "Input", "Scrivi", "Focus", "Form"
+    const inputRef = useRef(null); // Per il focus
+    const [testo, setTesto] = useState(""); // Per il valore
+
+    const inviaDati = () => {
+        // Se chiedono focus:
+        inputRef.current.focus();
+        // Se chiedono alert o log:
+        console.log(testo);
+    };
+
+
+    // --- BLOCCO 3: SE DEVI GESTIRE CLICK/CONTATORI ---
+    // Usalo se leggi: "Toggle", "Nascondi/Mostra", "Contatore"
+    const [attivo, setAttivo] = useState(false);
+
+
+    // --- AREA RETURN (Scegli quello che serve) ---
+    return (
+        <div>
+            <h2>Esercizio: {titolo}</h2>
+
+            {/* A. SE SERVE LISTA (Usa Blocco 1) */}
+            <ul>
+                {dati.map((item) => (
+                    <li key={item.id}>{item.nome}</li>
+                ))}
+            </ul>
+
+            {/* B. SE SERVE INPUT (Usa Blocco 2) */}
+            <input 
+                ref={inputRef}
+                value={testo}
+                onChange={(e) => setTesto(e.target.value)}
+            />
+            <button onClick={inviaDati}>Invia</button>
+
+            {/* C. SE SERVE TOGGLE/INTERRUTTORE (Usa Blocco 3) */}
+            <button onClick={() => setAttivo(!attivo)}>
+                {attivo ? "Spegni" : "Accendi"}
+            </button>
+            
+            {/* Render Condizionale Semplice */}
+            {attivo && <p>Adesso mi vedi!</p>}
+
+        </div>
+    );
+};
+
+export default EsercizioMaster;
+
+
+
+🧠 COME USARLO ALL'ESAME
+
+Non copiare tutto! Fai così:
+
+    Leggi la traccia.
+
+        Dice "Scarica i post dell'utente"? -> Copia Blocco 1 e la Lista (A) nel return.
+
+        Dice "Input che stampa in console"? -> Copia Blocco 2 e l'Input (B) nel return.
+
+        Dice "Bottone mostra/nascondi"? -> Copia Blocco 3 e il Toggle (C) nel return.
+
+    Unisci i pezzi.
+
+        Scrivi sempre const Nome = () => {.
+
+        Incolla gli stati che ti servono.
+
+        Incolla il return con l'HTML che ti serve.
+
+        Chiudi la graffa };.
+
+Questa struttura copre il 99% degli esercizi da 2 punti. È chiara?
