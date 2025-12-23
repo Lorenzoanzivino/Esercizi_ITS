@@ -19,7 +19,7 @@ class ServiceCenter:
 
     def patch_status(self, device_id, new_status):
         if device_id in self.devices:
-            self.devices[device_id].status = new_status
+            self.devices[device_id].status = new_status.status
             return True
         return False
 
