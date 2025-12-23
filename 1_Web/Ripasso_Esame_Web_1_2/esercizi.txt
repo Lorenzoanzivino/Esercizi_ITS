@@ -1,0 +1,112 @@
+// Definisco l'arrey
+const dati = ["A", "B", "C"];
+
+// Creo un contenitore "contenitore" come lista non ordinata "ul"
+const contenitore = document.createElement("ul");
+
+// gestisco un ciclo forOf perche non deve restituire un nuovo array
+for (dato of dati){
+    const figlio = document.createElement("li");
+
+    // dato lo prendo dal padre ul
+    figlio.textContent = dato;
+
+    // uso child per passare da figlio a padre
+    contenitore.appendChild(figlio); 
+};
+
+document.body.appendChild(contenitore)
+
+----------------------------------------------------------------------
+
+const form = document.getElementById("contatto")
+
+form.addEventListener("submit", (evento) => {
+    evento.preventDefaul()
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+
+    const output = document.createElement("h1");
+
+    output.textContent = `Nome: ${nome} - Email: ${email}`;
+
+    document.body.appendChild(output)
+});
+
+------------------------------------------------------------------------
+
+ESERCIZIO 3 — Form + lista
+Traccia
+
+Hai questo form HTML:
+
+<form id="frutta-form">
+  <input type="text" id="frutta" placeholder="Inserisci frutta">
+  <button type="submit">Aggiungi</button>
+</form>
+
+
+Obiettivi:
+
+intercettare il submit
+
+prevenire il comportamento di default
+
+prendere il valore dell’input (frutta)
+
+aggiungere questo valore a una lista <ul> già presente nel DOM
+
+se la lista non c’è, crearla al primo submit
+
+---
+const form = document.getElementById("Frutta-form")
+
+const contenitore = document.createElement("ul");
+
+document.body.appenChild(contenitore)
+
+form.addEventListener("submit", evento => {
+    evento.preventDefault()
+
+    const frutta = document.getElementById("frutta").value;
+
+    const nuovoFrutto = document.createElement("li")
+
+    nuovoFrutto.textContent = frutta
+
+    contenitore.appenChild(nuovoFrutto);
+});
+
+-------------------------------------------------------------------
+
+const array = ["Lorenzo", "Giulia", "Marco"];
+
+const contenitore = document.createElement("ul");
+
+
+
+import { useEffect } from 'react';
+
+const FunzioneLog = () => {
+    useEffect (() => {
+        console.log("ciao")
+    }; [])
+};
+
+export default FunzioneLog;
+
+.........................
+
+
+import react from 'react';
+
+const OttieniDati = async () => {
+    try{
+        const risposta = await fetch ("url");
+    }catch (errore){
+        console.log("errore")
+    };
+};
+
+-----------------------------------------------
+
