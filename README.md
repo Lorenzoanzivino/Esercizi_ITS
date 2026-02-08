@@ -14,7 +14,6 @@
 9. [🐧 Linux & Bash](#-linux--bash)
 10. [🔒 Cyber Security](#-cyber-security)
 11. [📚 Altro](#-altro)
-12. [📚🎓 Esami](#-esami)
 
 ---
 
@@ -200,27 +199,8 @@
 ---
 
 ## 📚 Altro 
-- Soft Skills: Organizzazione Aziendale 🤝
+- Inglese,
+- Soft Skills: Organizzazione Aziendale 🤝,
 - Progetto extracurriculare **SIATE_PlayGroung_Sapienza** 👾
-
-[⬆️ Torna su](#-sommario)
-
----
-
-## 📚🎓 Esami
-- Inglese 🇬🇧:
-    - 🥇 Voto: 10/10 
-- Sistemi Digitali 💾:
-    - 🥇 Voto: /10 
-- Python 1-4 🐍:
-    - 🥇 Voto: /10
-- Progettazione (*analisi*) 📐:
-    - 🥇 Voto: /10
-- Web (*1-2*) 🌐:
-    -🥇 Voto: /10
-- DataBase (*diagramma e tabelle*) 🗄️:
-    - 🥇 Voto: /10
-- DataBase (*Query*) 🔎:
-    - 🥇 Voto: /10
 
 [⬆️ Torna su](#-sommario)
