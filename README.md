@@ -1,206 +1,323 @@
-# 🌥️ Cloud Developer  
-## 📚 Esercizi & Lezioni
+# ☁️ Application Cloud Developer
 
-### 📑 Sommario
+ITS-ICT Academy
 
-1. [📁 Directory](#-directory)
-2. [🧰 Ambienti di sviluppo](#-ambienti-di-sviluppo)
-3. [🐍 Python 1-4](#-python-1-4)
-4. [🐍 Python 5-6 (Flask)](#-python-5-6)
-5. [🧪 Progettazione Software](#-progettazione-software)
-6. [🧰 Git & GitHub](#-git--github)
-7. [🌐 Web Development](#-web-development)
-8. [🐳 Docker](#-docker)
-9. [🐧 Linux & Bash](#-linux--bash)
-10. [🔒 Cyber Security](#-cyber-security)
-11. [📚 Altro](#-altro)
+Repository che raccoglie esercizi, progetti, appunti e sperimentazioni sviluppati durante il percorso ITS in **Application Cloud Development**.
+
+Questo README rappresenta in modo strutturato le competenze tecniche acquisite, organizzate per area architetturale e stack tecnologico.
 
 ---
 
-## 📁 Directory
-**ITS-Esercizi 📂**
+# 📑 Sommario
+
+1. [📁 Struttura Repository](#-struttura-repository)
+2. [💻 Fondamenti di Informatica](#-fondamenti-di-informatica)
+3. [🐧 Linux & Bash](#-linux--bash)
+4. [🧰 Git & GitHub](#-git--github)
+5. [🗄️ Database & SQL](#-database--sql)
+6. [🐍 Backend Python](#-backend-python)
+7. [☕ Backend Java Enterprise](#-backend-java-enterprise)
+8. [🌐 Web Development](#-web-development)
+9. [🐳 Docker & Containerizzazione](#-docker--containerizzazione)
+10. [🧪 Progettazione Software & UML](#-progettazione-software--uml)
+11. [🔒 Cyber Security](#-cyber-security)
+12. [📚 Soft Skills & Progetti Extra](#-soft-skills--progetti-extra)
+13. [🎯 Obiettivo del Percorso](#-obiettivo-del-percorso)
 
 ---
 
-## 🧰 Ambienti di sviluppo
-- **Python**: scripting, OOP, gestione file, regex, eccezioni, debugging 
-- **Java**: scripting, OOP, gestione file, regex, eccezioni, debugging 
-- **Git & GitHub**: versionamento, branching, pull/push remoto → locale  
-- **VSCode**: IDE principale, supporto a Python, Docker, React, debugging  
-- **Web**: HTML5, CSS3, JavaScript, DOM, Bootstrap, React, NodeJS  
-- **Docker**: containerizzazione applicazioni, Dockerfile, immagini e container  
-- **Linux & Bash**: terminale, utenti e permessi, file system, shell scripting  
-- **UML & Progettazione Software**: diagrammi classi, use-case, vincoli  
-- **Database**: progettazione concettuale, tabelle, domini  
-- **Cyber Security**: teoria dei sistemi digitali, criptografia, sicurezza informatica  
+# 📁 Struttura Repository
 
-[⬆️ Torna su](#-sommario)
+Cartella principale:
 
----
+**ITS-Esercizi/**  
+Contiene:
 
-## 🐍 Python 1-4
-- **Lezioni Funzioni**
-    - Funzioni base  
-    - Funzioni ricorsive  
-- **Eccezioni & Asserzioni**
-    - `raise Exception()`  
-    - `try / except / finally`  
-    - `assert`  
-- **Regex**  
-- **Lambda Functions**  
-- **Gestione File**
-    - `open()` / `close()`  
-    - Context Manager (`with`)  
-    - JSON (`json.load`)  
-    - Debugger  
-- **Classi**  
-- **Metodi speciali**
-    - `__str__`, `__call__`, `__repr__`, `__eq__`, `__hash__`  
-- **Ereditarietà**  
-- **Polimorfismo**  
-- **Classi astratte**  
+- Esercizi didattici
+- Progetti di modellazione
+- Applicazioni backend e frontend
+- Materiale di laboratorio
+- Directory Java separate come `7_Java/`
 
-[⬆️ Torna su](#-sommario)
+[⬆️ Torna al Sommario](#-sommario)
 
 ---
 
-## 🐍 Python 5-6
-### REST - FLASK
-    
-```bash
-    from flask import Flask, request, url_for, jsonify
+# 💻 Fondamenti di Informatica
 
-    app = Flask(__name__)
+- Programmazione imperativa e OOP
+- Strutture dati base
+- Gestione file
+- Debugging
+- Regex
+- Gestione eccezioni
+- Testing concettuale (PyTest, JUnit)
+- Modellazione logica dei problemi
 
-    app.run(debug=True)
-```
+Focus su:
 
-- **Verbi**
-    - `GET`, `POST`, `PUT`, `PATH`, `DELETE`
-- **Routes**
-    - `app.get('/collezioni/risorsa')`
-    - `app.route('/collezioni/..., methods=['GET', 'POST'])`
+- Astrazione
+- Separazione delle responsabilità
+- Riutilizzabilità
+- Manutenibilità del codice
 
-[⬆️ Torna su](#-sommario)
-
----
-
-## 🧪 Progettazione Software
-- **Analisi 🧠** (*concettuale*)
-- **Design 🎨** (*python*)
-- **DataBase 🗃️** (*sql*)
-    - SQL
-    - postgress
-    - Progettazione concettuale  
-    - Tabelle e domini 
-
-- **Esercizi ✍️**
-    - Azienda_1 🏢  
-    - Volo_1 ✈️  
-    - Università_1 🎓  
-    - Ordini_Fatture_1 🎓  
-    - Impiegati_Studenti_1 🧑‍💼  
-    - GO! ⚫  
-    - Esercitazione_univeritaria 🧪  
-    - Officine_1 🛠️  
-    - Accademia_2 🏛️  
-    - Ebay 🛒, RistoBook 🍽️  
-        - Specifica di classi 🔧  
-        - Specifica di operazioni ⚙️  
-        - Vincoli esterni 🔒  
-        - Use-case 🧩  
-        - Diagramma ristrutturato ♻️  
-    - Ristobook 📖
-    - TravelPlan 🗺️
-    - MyPrecious 💍
-    - Out! 🚪
-    - TuTubi 📺
-    - QuickHospital 🏥
-    - TravelToTheMoon 🚀
-- **Use Case UML**  
-- **Ebay/1 🛒**
-    - Raffinamento dei requisiti 📋  
-- **Ebay/2 🛒**
-    - Diagramma delle classi 📊   
-
-[⬆️ Torna su](#-sommario)
+[⬆️ Torna al Sommario](#-sommario)
 
 ---
 
-## 🧰 Git & GitHub
-- Comandi base e avanzati Git  
-- Panoramica GitHub  
-- Pull remoto → locale  
+# 🐧 Linux & Bash
 
-[⬆️ Torna su](#-sommario)
+- Struttura del file system
+- Utenti, gruppi e permessi
+- Root e privilegi
+- Shell Bash
+- Redirezioni I/O
+- Pipeline
+- Variabili e script bash
+- Gestione processi
+- Networking base da terminale
 
----
+Obiettivo: autonomia operativa in ambiente Linux.
 
-## 🌐 Web Development
-
-### Web.1
-- Creazione cartelle:
-    - HTML 🌐  
-    - CSS 🎨  
-    - DOM 🔧  
-    - Bootstrap 📦  
-    - JavaScript 🟨  
-- Esercizi Web.1  
-- CSS  
-- Bootstrap / DOM  
-- JavaScript  
-- JavaScript esercizi  
-
-### Web.2
-- Creazione cartelle:
-    - JavaScript 🟨  
-        - Funzioni Asincrone  
-- React ⚛️
-    - NodeJS (JS lato server)  
-        - NPM (gestione librerie)  
-        - Vite (build tool)  
-        - Docker  
-
-[⬆️ Torna su](#-sommario)
+[⬆️ Torna al Sommario](#-sommario)
 
 ---
 
-## 🐳 Docker
-- Containerizzazione applicazioni  
-- Creazione immagini e gestione container  
+# 🧰 Git & GitHub
 
-[⬆️ Torna su](#-sommario)
+- Repository locali e remoti
+- Branching model
+- Merge & Rebase
+- Pull / Push
+- Gestione conflitti
+- Workflow collaborativi
+- Versionamento professionale
 
----
+Strumenti:
 
-## 🐧 Linux & Bash
-- Concetti fondamentali
-    - Utente root 👤  
-    - Gruppi e permessi 👥  
-    - Shell Bash 🖥️  
-    - Comandi utili 🧾  
-    - File system 📂  
-    - Input / Output / Error 🔄  
-    - Pipeline ⛓️  
-    - Liste e array 📋  
-    - Operatori logici ⚙️  
+- CLI Git
+- GitHub
 
-[⬆️ Torna su](#-sommario)
+[⬆️ Torna al Sommario](#-sommario)
 
 ---
 
-## 🔒 Cyber Security
-- Teoria e principi base 💻  
-- Sistemi digitali, binari e bit 🔒  
-- Criptografia e decriptografia 🔒  
+# 🗄️ Database & SQL
 
-[⬆️ Torna su](#-sommario)
+## 📐 Progettazione
+
+- Modellazione concettuale (E-R)
+- Tabelle e domini
+- Normalizzazione
+- Vincoli
+- Raffinamento dei requisiti
+
+## 🧮 SQL
+
+- SELECT, WHERE, JOIN
+- GROUP BY, HAVING
+- Subquery
+- Indici
+- Transazioni
+
+## 🐘 PostgreSQL
+
+- Installazione e configurazione
+- Gestione utenti e accessi remoti
+- Integrazione con applicazioni
+- ORM e layer applicativo
+
+[⬆️ Torna al Sommario](#-sommario)
 
 ---
 
-## 📚 Altro 
-- Inglese,
-- Soft Skills: Organizzazione Aziendale 🤝,
-- Progetto extracurriculare **SIATE_PlayGroung_Sapienza** 👾
+# 🐍 Backend Python
 
-[⬆️ Torna su](#-sommario)
+## Python 1–4
+
+- Funzioni base e ricorsive
+- Lambda, Map, Filter
+- Classi, ereditarietà, polimorfismo
+- Classi astratte
+- Metodi speciali (`__str__`, `__repr__`, `__eq__`, `__hash__`, `__call__`)
+- Eccezioni (`raise`, `try/except/finally`, `assert`)
+- Gestione file e JSON
+- Debugging
+- Testing con PyTest
+
+## Python 5–6 — REST con Flask
+
+- Creazione API REST leggere
+- Routing e serializzazione JSON
+- Verbi HTTP: GET, POST, PUT, PATCH, DELETE
+- Integrazione con frontend
+- Progetti: applicazioni cloud modulari
+
+[⬆️ Torna al Sommario](#-sommario)
+
+---
+
+# ☕ Backend Java Enterprise
+
+## 🟢 Java
+
+- OOP avanzato
+- Collections Framework
+- Stream API
+- Generics
+- Eccezioni
+- File handling
+- Testing con JUnit
+
+---
+
+## 🌱 Spring Framework
+
+- IoC (Inversion of Control)
+- Dependency Injection
+- Bean lifecycle
+- Configurazione Java-based
+- Spring MVC
+
+---
+
+## 🚀 Spring Boot
+
+- Starter dependencies
+- Autoconfigurazione
+- REST Controller
+- Profiles
+- Application properties / YAML
+- Logging
+
+### Architettura Layered
+
+- Controller
+- Service
+- Repository
+- Entity
+
+---
+
+## 🧩 Hibernate / JPA
+
+- Entity mapping
+- Relazioni: `@OneToMany`, `@ManyToOne`, `@ManyToMany`
+- Fetch types (Lazy / Eager)
+- Cascade
+- JPQL
+- Persistenza ORM
+- Integrazione con Spring Boot
+
+**Obiettivo:** sviluppo backend enterprise strutturato e organizzato per layer.
+
+[⬆️ Torna al Sommario](#-sommario)
+
+---
+
+# 🌐 Web Development
+
+## Web.1
+
+- HTML5, CSS3
+- DOM manipulation
+- Bootstrap
+- JavaScript base
+- Event handling
+
+---
+
+## Web.2
+
+- JavaScript avanzato (ES6+, Async/Await, Promises)
+- React: componenti, state, props
+- NodeJS, NPM, Vite
+- Integrazione con backend REST
+
+**Obiettivo:** sviluppo frontend moderno integrato con API REST.
+
+[⬆️ Torna al Sommario](#-sommario)
+
+---
+
+# 🐳 Docker & Containerizzazione
+
+- Dockerfile
+- Creazione immagini
+- Gestione container
+- Reti Docker
+- Volumi
+- Multi-container setup
+- Integrazione backend + database
+
+**Obiettivo:** deployment isolato, replicabile e portabile.
+
+[⬆️ Torna al Sommario](#-sommario)
+
+---
+
+# 🧪 Progettazione Software & UML
+
+- Analisi dei requisiti
+- Use Case
+- Diagrammi delle classi
+- Vincoli esterni
+- Specifica delle operazioni
+- Raffinamento dei requisiti
+
+## Esercitazioni
+
+- Azienda, Università, Volo
+- Ordini e Fatture, Impiegati e Studenti
+- Ebay, Ristobook, TravelPlan
+- QuickHospital, TravelToTheMoon, GO!
+- Officine, Accademia
+
+### Approccio metodologico
+
+Analisi → Design → Implementazione → Refactor
+
+[⬆️ Torna al Sommario](#-sommario)
+
+---
+
+# 🔒 Cyber Security
+
+- Sistemi digitali
+- Binario e bit
+- Principi di sicurezza informatica
+- Crittografia e decrittografia
+- Fondamenti di protezione dei sistemi
+
+[⬆️ Torna al Sommario](#-sommario)
+
+---
+
+# 📚 Soft Skills & Progetti Extra
+
+- Organizzazione aziendale
+- Lavoro in team
+- Comunicazione tecnica
+- Documentazione tecnica
+
+## Progetto extracurriculare
+
+- SIATE_PlayGroung_Sapienza
+
+[⬆️ Torna al Sommario](#-sommario)
+
+---
+
+# 🎯 Obiettivo del Percorso
+
+Formazione come **Application Cloud Developer**, con competenze su:
+
+- Backend REST (Python / Java)
+- Frontend moderno (React)
+- Database relazionali
+- Containerizzazione
+- Architettura software
+- Workflow professionale Git
+- Ambiente Linux
+
+Percorso orientato allo sviluppo di applicazioni **cloud-ready**, modulari e manutenibili.
